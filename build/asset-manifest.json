@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "./static/css/main.a9124c74.chunk.css",
+    "main.js": "./static/js/main.3fe6f4df.chunk.js",
+    "main.js.map": "./static/js/main.3fe6f4df.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/css/2.e40df323.chunk.css": "./static/css/2.e40df323.chunk.css",
+    "static/js/2.f35edf78.chunk.js": "./static/js/2.f35edf78.chunk.js",
+    "static/js/2.f35edf78.chunk.js.map": "./static/js/2.f35edf78.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.c7658d76152040e28f1e66b275f6b6c0.js": "./precache-manifest.c7658d76152040e28f1e66b275f6b6c0.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.e40df323.chunk.css.map": "./static/css/2.e40df323.chunk.css.map",
+    "static/css/main.a9124c74.chunk.css.map": "./static/css/main.a9124c74.chunk.css.map",
+    "static/media/App.css": "./static/media/starjedi.cc3019aa.ttf",
+    "static/media/logo.png": "./static/media/logo.fd0488c7.png"
+  }
+}
