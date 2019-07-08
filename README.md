@@ -19,7 +19,7 @@ On terminal:
 * HTML
 * CSS
 * Javascript
-* Restful API's
+* Restful API
 * React
 
 ## Authors
