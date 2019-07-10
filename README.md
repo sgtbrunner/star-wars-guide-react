@@ -4,7 +4,7 @@ A Star Wars Character Guide built with React. Includes a real-time search bar.
 
 ## Prerequisites
 
-None
+NPM installed
 
 ## Getting Started
 
