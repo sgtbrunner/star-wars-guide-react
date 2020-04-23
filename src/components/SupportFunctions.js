@@ -3,17 +3,16 @@
 
 // VARIABLE DECLARATION
 	let pages = [];
-	let characters = [];
 	const urls = [
-		'https://swapi.co/api/people/',
-		'https://swapi.co/api/people/?page=2',
-		'https://swapi.co/api/people/?page=3',
-		'https://swapi.co/api/people/?page=4',
-		'https://swapi.co/api/people/?page=5',
-		'https://swapi.co/api/people/?page=6',
-		'https://swapi.co/api/people/?page=7',
-		'https://swapi.co/api/people/?page=8',
-		'https://swapi.co/api/people/?page=9',
+		'https://swapi.dev/api/people/',
+		'https://swapi.dev/api/people/?page=2',
+		'https://swapi.dev/api/people/?page=3',
+		'https://swapi.dev/api/people/?page=4',
+		'https://swapi.dev/api/people/?page=5',
+		'https://swapi.dev/api/people/?page=6',
+		'https://swapi.dev/api/people/?page=7',
+		'https://swapi.dev/api/people/?page=8',
+		'https://swapi.dev/api/people/?page=9',
 	]
 	
 // FUN FUN FUNCTIONS
@@ -21,7 +20,7 @@
 const getCharacters = async function() {
 	try {
 		await getData();			
-		return characters = await concatArray(pages);
+		return await concatArray(pages);
 	} catch (err) {
 	   	console.log('ooooooops', err);		
 	}
@@ -49,16 +48,6 @@ const concatArray = (array) => {
 	return people;
 }
 
-// ** Needed to fix the order which characters are displayed, repositioning Padmé Amidala and Ratts Tyerell in
-// order to match the image database at https://starwars-visualguide.com/assets/img/characters/
-const fixOrder = async function(array) {
-	characters.splice(33,0,array.pop());
-	const ratts = characters[72];
-	characters.splice(72,1);
-	characters.splice(45,0,ratts);
-	return await characters;
-}
-
 // ** This auxiliar function adds obj2 props into obj1 and returns obj1
 const augment = (obj1, obj2) => {
 	let prop;
@@ -80,7 +69,6 @@ const addId = (array) => {
 
 const CreateList = async function() {
 	let list = await getCharacters();
-	list = await fixOrder(list);
 	addId(list);
 	return await list;
 }
