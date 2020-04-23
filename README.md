@@ -27,4 +27,4 @@ On terminal:
 * **Guilherme Brunner** - *Initial work* - [sgtbrunner](https://github.com/sgtbrunner)
 
 ## Acknowledgement
-* **Star Wars API** - https://swapi.co/
+* **Star Wars API** - https://swapi.dev/
