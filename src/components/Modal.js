@@ -1,5 +1,5 @@
 import React from 'react';
-import {getImage} from '../components/SupportFunctions';
+import {getImage} from '../utils/supportFunctions.utils';
 
 const Modal = function({showModal, character, race, planet, movies, onCloseClick}) {
 	let showContent = (race && planet && movies) ? true : false;

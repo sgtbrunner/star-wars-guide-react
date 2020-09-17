@@ -1,7 +1,7 @@
 /* LOADS FONT FROM SERVER ROOT DIRECTORY */
 @font-face {
     font-family: 'Star Jedi';
-    src: url(starjedi.ttf);
+    src: url(assets/fonts/starjedi.ttf);
   }
   
   #temp-page {
@@ -17,7 +17,7 @@
   }
   
   #flex-container {
-    background-image: url("../img/bg.jpg");
+    background-image: url("./assets/img/bg.jpg");
     background-size: repeat;
     padding: 15px 0;
   }

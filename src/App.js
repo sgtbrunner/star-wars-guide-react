@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
-import Header from '../components/Header';
-import SearchBox from '../components/SearchBox';
-import CardList from '../components/CardList';
-import CreateList from '../components/SupportFunctions';
-import Modal from '../components/Modal';
-import {getStats} from '../components/SupportFunctions';
-import {getFilms} from '../components/SupportFunctions';
-import Footer from '../components/Footer';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import Header from './components/Header';
+import SearchBox from './components/SearchBox';
+import CardList from './components/CardList';
+import Modal from './components/Modal';
+import Footer from './components/Footer';
+import { getCharacters } from './redux/characters/characters.actions';
+import { createList, getStats, getFilms } from './utils/supportFunctions.utils';
 import './App.css';
 
 class App extends Component {
-  // STATE DECLARATION AND INITIALIZATION
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       characters: [],
       searchfield: '',
@@ -22,25 +22,19 @@ class App extends Component {
       movies: '',
       showmodal: false
     }
+    console.log(props)
   }
 
-  // componentDidMount() IS A LIFECYCLE HOOK THAT RUNS ONCE THE APP COMPONENT IS MOUNTED IN 
-  // INDEX.HTML. IN THIS CASE, IT UPDATES THIS.STATE.CHARACTERS WITH THE RETURNED ARRAY OF 
-  // CHARACTERS FROM GETCHARACTERS()
   componentDidMount() {
-  // ** Fetches all characters from SWAPI
-    CreateList().then(response => this.setState({characters: response}));
+    // this.props.getCharacters();
+    createList().then(response => this.setState({characters: response}));
   }
 
-  // TRIGGERED EVERY TIME THE SEARCHBOX CHANGES
-  // ** Actively changes displayed characters to seached value
   onSearchChange = (event) => {
     this.setState({searchfield: event.target.value});
   }
 
-  // TRIGGERED EVERY TIME A CARD IS CLICKED
   openModal = (event) => {
-  // ** Fetches asynchronous character information and open modal
     this.setState({clickedcard: this.state.characters[event.target.id]})
     getStats(this.state.characters[event.target.id].species)
     .then(response => this.setState({race: response}));
@@ -51,9 +45,7 @@ class App extends Component {
     this.setState({showmodal: true});
   }
 
-  // TRIGGERED EVERYTIME X OR OUTER MODAL IS CLICKED
   onCloseClick = () => {
-  // ** Set states to initial values and close modal
     this.setState({
       clickedcard: '',
       race: '',
@@ -63,10 +55,8 @@ class App extends Component {
     });
   }
 
-  // RENDER TO INDEX.HTML
   render() {
     const filteredCharacters = this.state.characters.filter(character => {
-    // Needs .toLowerCase() on both sides of the declaration to compare input to user.name on the same level
         return character.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
       } 
     );
@@ -103,4 +93,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const maptDispatchToProps = dispatch => ({
+  getCharacters: () => dispatch(getCharacters())
+});
+
+const mapStateToProps = state => ({
+  characters: state.characters.characters
+});
+
+export default connect(mapStateToProps, maptDispatchToProps)(App);

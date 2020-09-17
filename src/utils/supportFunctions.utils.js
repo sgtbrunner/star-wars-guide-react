@@ -20,7 +20,7 @@
 const getCharacters = async function() {
 	try {
 		await getData();			
-		return await concatArray(pages);
+		return concatArray(pages);
 	} catch (err) {
 	   	console.log('ooooooops', err);		
 	}
@@ -67,10 +67,10 @@ const addId = (array) => {
 	})
 }
 
-const CreateList = async function() {
+export const createList = async function() {
 	let list = await getCharacters();
 	addId(list);
-	return await list;
+	return list;
 }
 
 // ** SWAPI has an issue handling https://swapi.co/api/people/17/ returnig error 404,
@@ -116,6 +116,4 @@ export const getFilms = async function(urls) {
 		   		console.log('ooooooops', err);	
 			}
 		  	return movies;
-	}
-
-export default CreateList;
+};

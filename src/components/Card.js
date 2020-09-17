@@ -1,5 +1,5 @@
 import React from 'react';
-import {getImage} from './SupportFunctions'
+import {getImage} from '../utils/supportFunctions.utils'
 
 const Card = function({name, index, openModal}) {
 	return (
