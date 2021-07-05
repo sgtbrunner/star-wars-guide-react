@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/star-wars-guide-react/static/css/main.df165393.chunk.css",
+    "main.js": "/star-wars-guide-react/static/js/main.95ad52bb.chunk.js",
+    "main.js.map": "/star-wars-guide-react/static/js/main.95ad52bb.chunk.js.map",
+    "runtime-main.js": "/star-wars-guide-react/static/js/runtime-main.be764de0.js",
+    "runtime-main.js.map": "/star-wars-guide-react/static/js/runtime-main.be764de0.js.map",
+    "static/css/2.07548e1c.chunk.css": "/star-wars-guide-react/static/css/2.07548e1c.chunk.css",
+    "static/js/2.3b31cfa8.chunk.js": "/star-wars-guide-react/static/js/2.3b31cfa8.chunk.js",
+    "static/js/2.3b31cfa8.chunk.js.map": "/star-wars-guide-react/static/js/2.3b31cfa8.chunk.js.map",
+    "index.html": "/star-wars-guide-react/index.html",
+    "precache-manifest.0bb1f53373b292cddc97c0350dab4e84.js": "/star-wars-guide-react/precache-manifest.0bb1f53373b292cddc97c0350dab4e84.js",
+    "service-worker.js": "/star-wars-guide-react/service-worker.js",
+    "static/css/2.07548e1c.chunk.css.map": "/star-wars-guide-react/static/css/2.07548e1c.chunk.css.map",
+    "static/css/main.df165393.chunk.css.map": "/star-wars-guide-react/static/css/main.df165393.chunk.css.map",
+    "static/js/2.3b31cfa8.chunk.js.LICENSE.txt": "/star-wars-guide-react/static/js/2.3b31cfa8.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/star-wars-guide-react/static/media/starjedi.cc3019aa.ttf",
+    "static/media/logo.png": "/star-wars-guide-react/static/media/logo.fd0488c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be764de0.js",
+    "static/css/2.07548e1c.chunk.css",
+    "static/js/2.3b31cfa8.chunk.js",
+    "static/css/main.df165393.chunk.css",
+    "static/js/main.95ad52bb.chunk.js"
+  ]
+}
