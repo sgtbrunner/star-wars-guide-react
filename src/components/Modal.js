@@ -1,7 +1,7 @@
 import React from 'react';
-import { getImage } from '../utils/supportFunctions.utils';
+import { getImage } from '../utils/functions.utils';
 
-const Modal = function ({ showModal, character, race, planet, movies, onCloseClick }) {
+const Modal = ({ showModal, character, race, planet, movies, onCloseClick }) => {
   const showContent = !!(race && planet && movies);
   if (!showModal) {
     return null;

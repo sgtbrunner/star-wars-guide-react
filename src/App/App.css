@@ -1,7 +1,6 @@
-/* LOADS FONT FROM SERVER ROOT DIRECTORY */
 @font-face {
   font-family: 'Star Jedi';
-  src: url(assets/fonts/starjedi.ttf);
+  src: url(../assets/fonts/starjedi.ttf);
 }
 
 #temp-page {
@@ -17,7 +16,7 @@
 }
 
 #flex-container {
-  background-image: url('./assets/img/bg.jpg');
+  background-image: url('../assets/img/bg.jpg');
   background-size: repeat;
   padding: 15px 0;
 }
@@ -39,7 +38,6 @@
   padding: 25vh 10vh;
 }
 
-/*SETS FADE IN & FADE OUT ANIMATION - EXTRACTED FROM THE WEB*/
 @keyframes flickerAnimation {
   0% {
     opacity: 1;
@@ -152,7 +150,6 @@
   font-weight: bold;
 }
 
-/* The Modal (background) */
 .modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -164,7 +161,6 @@
   background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
 }
 
-/* Modal Box */
 .modal-content,
 .modal-load {
   background-color: #fefefe;
@@ -212,7 +208,6 @@
   grid-row-gap: 0;
 }
 
-/* The Close Button */
 .close {
   color: #aaaaaa;
   float: right;
@@ -259,15 +254,12 @@
   padding: 20px 0;
 }
 
-/*** Handles "No characters found" box settings when screen 
-  width decreases to less than 607px */
 @media only screen and (max-width: 607px) {
   .custom-font {
     font-size: 30px;
   }
 }
 
-/*** Handles Modal settings when screen width decreases to less than 735px */
 @media only screen and (max-width: 735px) {
   .modal-content,
   .modal-load {
@@ -280,7 +272,7 @@
     font-size: 2.8vw;
   }
 }
-/*** Handles Modal settings when screen width decreases to less than 516px */
+
 @media only screen and (max-width: 516px) {
   .modal-content,
   .modal-load {

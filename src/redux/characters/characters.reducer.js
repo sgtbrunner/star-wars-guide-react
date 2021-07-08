@@ -1,6 +1,6 @@
 import { charactersActionTypes } from './characters.types';
 
-import { createList } from '../../utils/supportFunctions.utils';
+import { createList } from '../../utils/functions.utils';
 
 const INITIAL_STATE = {
   characters: [],
@@ -19,8 +19,7 @@ const charactersReducer = (state = INITIAL_STATE, action) => {
           .then((response) => response.json())
           .then((data) => {
             return data;
-          })
-          .catch((error) => console.log(error)),
+          }),
       };
     default:
       return state;
