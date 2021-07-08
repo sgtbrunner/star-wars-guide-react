@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = function ({ characters, filteredCharacters, openModal }) {
+const CardList = ({ filteredCharacters, openModal }) => {
   if (filteredCharacters.length) {
     return (
       <div id="cardlist">
-        {filteredCharacters.map((character, index) => {
+        {filteredCharacters.map((character) => {
           return (
             <Card
               name={character.name}

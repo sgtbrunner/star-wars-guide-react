@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Header from './components/Header';
-import SearchBox from './components/SearchBox';
-import CardList from './components/CardList';
-import Modal from './components/Modal';
-import Footer from './components/Footer';
-import { getCharacters } from './redux/characters/characters.actions';
-import { createList, getStats, getFilms } from './utils/supportFunctions.utils';
+import Header from '../components/Header';
+import SearchBox from '../components/SearchBox';
+import CardList from '../components/CardList';
+import Modal from '../components/Modal';
+import Footer from '../components/Footer';
+import { getCharacters } from '../redux/characters/characters.actions';
+import { createList, getStats, getFilms } from '../utils/functions.utils';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +22,6 @@ class App extends Component {
       movies: '',
       showmodal: false,
     };
-    console.log(props);
   }
 
   componentDidMount() {
