@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../components/Header';
@@ -10,89 +10,79 @@ import { getCharacters } from '../redux/characters/characters.actions';
 import { createList, getStats, getFilms } from '../utils/functions.utils';
 import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      characters: [],
-      searchfield: '',
-      clickedcard: '',
-      race: '',
-      planet: '',
-      movies: '',
-      showmodal: false,
-    };
-  }
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+  const [searchField, setSearchField] = useState('');
+  const [clickedCard, setClickedCard] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [characterDetails, setCharacterDetails] = useState({ race: '', planet: '', movies: '' });
 
-  componentDidMount() {
-    // this.props.getCharacters();
-    createList().then((response) => this.setState({ characters: response }));
-  }
+  useEffect(() => {
+    createList().then((response) => setCharacters(response));
+  }, []);
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
+  const onSearchChange = (event) => {
+    setSearchField(event.target.value);
   };
 
-  openModal = (event) => {
-    this.setState({ clickedcard: this.state.characters[event.target.id] });
-    getStats(this.state.characters[event.target.id].species).then((response) =>
-      this.setState({ race: response })
-    );
-    getStats(this.state.characters[event.target.id].homeworld).then((response) =>
-      this.setState({ planet: response })
-    );
-    getFilms(this.state.characters[event.target.id].films).then((response) =>
-      this.setState({ movies: response })
-    );
-    this.setState({ showmodal: true });
-  };
-
-  onCloseClick = () => {
-    this.setState({
-      clickedcard: '',
-      race: '',
-      planet: '',
-      movies: '',
-      showmodal: false,
+  const openModal = async (event) => {
+    setShowModal(true);
+    setClickedCard(characters[event.target.id]);
+    const race = await getStats(characters[event.target.id].species);
+    const planet = await getStats(characters[event.target.id].homeworld);
+    const movies = await getFilms(characters[event.target.id].films);
+    setCharacterDetails({
+      race,
+      planet,
+      movies,
     });
   };
 
-  render() {
-    const filteredCharacters = this.state.characters.filter((character) => {
-      return character.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+  const onCloseClick = () => {
+    setCharacterDetails({
+      race: '',
+      planet: '',
+      movies: '',
     });
+    setClickedCard('');
+    setShowModal(false);
+  };
 
-    if (!this.state.characters.length) {
-      return (
-        <div id="temp-page">
-          <div className="page-loader animate-flicker">Please wait...</div>
-        </div>
-      );
-    }
+  const filteredCharacters = characters.filter((character) =>
+    character.name.toLowerCase().includes(searchField.toLowerCase())
+  );
+
+  if (!characters.length) {
     return (
-      <div>
-        <Header />
-        <div id="flex-container">
-          <SearchBox searchChange={this.onSearchChange} />
-          <CardList
-            characters={this.state.characters}
-            filteredCharacters={filteredCharacters}
-            openModal={this.openModal}
-          />
-          <Modal
-            showModal={this.state.showmodal}
-            character={this.state.clickedcard}
-            race={this.state.race}
-            planet={this.state.planet}
-            movies={this.state.movies}
-            onCloseClick={this.onCloseClick}
-          />
-        </div>
-        <Footer />
+      <div id="temp-page">
+        <div className="page-loader animate-flicker">Please wait...</div>
       </div>
     );
   }
-}
+  return (
+    <div>
+      <Header />
+      <div id="flex-container">
+        <SearchBox searchChange={onSearchChange} />
+        <CardList
+          characters={characters}
+          filteredCharacters={filteredCharacters}
+          openModal={openModal}
+        />
+        ''
+        <Modal
+          showModal={showModal}
+          character={clickedCard}
+          race={characterDetails.race}
+          planet={characterDetails.planet}
+          movies={characterDetails.movies}
+          onCloseClick={onCloseClick}
+        />
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
 const maptDispatchToProps = (dispatch) => ({
   getCharacters: () => dispatch(getCharacters()),
