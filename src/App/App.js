@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import Header from '../components/Header';
 import SearchBox from '../components/SearchBox';
-import CardList from '../components/CardList';
-import Modal from '../components/Modal';
+import CardList from '../components/Cardlist';
+import Dialog from '../components/Dialog';
 import Footer from '../components/Footer';
 import { getCharacters } from '../redux/characters/characters.actions';
 import { createList, getStats, getFilms } from '../utils/functions.utils';
@@ -13,9 +13,9 @@ import './App.css';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searchField, setSearchField] = useState('');
-  const [clickedCard, setClickedCard] = useState('');
+  const [clickedCard, setClickedCard] = useState({});
   const [showModal, setShowModal] = useState(false);
-  const [characterDetails, setCharacterDetails] = useState({ race: '', planet: '', movies: '' });
+  const [characterDetails, setCharacterDetails] = useState({ race: {}, planet: {}, movies: '' });
 
   useEffect(() => {
     createList().then((response) => setCharacters(response));
@@ -40,11 +40,11 @@ const App = () => {
 
   const onCloseClick = () => {
     setCharacterDetails({
-      race: '',
-      planet: '',
+      race: {},
+      planet: {},
       movies: '',
     });
-    setClickedCard('');
+    setClickedCard({});
     setShowModal(false);
   };
 
@@ -60,27 +60,24 @@ const App = () => {
     );
   }
   return (
-    <div>
+    <>
       <Header />
-      <div id="flex-container">
+      <div id="main">
         <SearchBox searchChange={onSearchChange} />
-        <CardList
-          characters={characters}
-          filteredCharacters={filteredCharacters}
-          openModal={openModal}
-        />
+        <CardList characters={filteredCharacters} openModal={openModal} />
         ''
-        <Modal
-          showModal={showModal}
-          character={clickedCard}
-          race={characterDetails.race}
-          planet={characterDetails.planet}
-          movies={characterDetails.movies}
-          onCloseClick={onCloseClick}
-        />
+        {showModal && (
+          <Dialog
+            character={clickedCard}
+            race={characterDetails.race}
+            planet={characterDetails.planet}
+            movies={characterDetails.movies}
+            onCloseClick={onCloseClick}
+          />
+        )}
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
