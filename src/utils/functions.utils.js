@@ -77,7 +77,7 @@ export const createList = async function () {
 
 // ** SWAPI has an issue handling https://swapi.co/api/people/17/ returnig error 404,
 // 	which can be bypassed with the following function
-export const getImage = (index) => {
+export const getImageUrl = (index) => {
   if (index < 16) {
     return `https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`;
   }
