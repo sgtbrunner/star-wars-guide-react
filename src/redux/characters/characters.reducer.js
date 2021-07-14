@@ -1,25 +1,29 @@
 import { charactersActionTypes } from './characters.types';
 
-import { createList } from '../../utils/functions.utils';
-
 const INITIAL_STATE = {
-  characters: [],
+  isLoading: false,
+  data: null,
+  error: null,
 };
 
 const charactersReducer = (state = INITIAL_STATE, action) => {
-  const fetchData = async () => {
-    return await createList();
-  };
-
   switch (action.type) {
-    case charactersActionTypes.GET_CHARACTERS:
+    case charactersActionTypes.LOAD_CHARACTERS_START:
       return {
         ...state,
-        characters: fetchData()
-          .then((response) => response.json())
-          .then((data) => {
-            return data;
-          }),
+        isLoading: true,
+      };
+    case charactersActionTypes.LOAD_CHARACTERS_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case charactersActionTypes.LOAD_CHARACTERS_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
       };
     default:
       return state;
