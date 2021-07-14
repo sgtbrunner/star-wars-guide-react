@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Header from '../components/Header';
 import SearchBox from '../components/SearchBox';
 import CardList from '../components/Cardlist';
 import Dialog from '../components/Dialog';
 import Footer from '../components/Footer';
-import { getCharacters } from '../redux/characters/characters.actions';
-import { createList, getStats, getFilms } from '../utils/functions.utils';
+import { getStats, getFilms } from '../utils/functions.utils';
 import './App.css';
 
-const App = () => {
-  const [characters, setCharacters] = useState([]);
+const App = ({ loadCharacters, characters }) => {
+  const isLoadingCharacters = !characters.length;
   const [searchField, setSearchField] = useState('');
   const [clickedCard, setClickedCard] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [characterDetails, setCharacterDetails] = useState({ race: {}, planet: {}, movies: '' });
-
   useEffect(() => {
-    createList().then((response) => setCharacters(response));
-  }, []);
+    const fetchData = () => {
+      // await api.getData(FILMS).then((data) => console.table(data));
+      // await api.getData(PLANETS).then((data) => console.table(data));
+      // await api.getData(SPECIES).then((data) => console.table(data));
+      // await api.getData(STARSHIPS).then((data) => console.table(data));
+      // await api.getData(VEHICLES).then((data) => console.table(data));
+      // await api.getData(PEOPLE).then((data) => console.log(data));
+      loadCharacters();
+    };
+
+    fetchData();
+  }, [loadCharacters]);
 
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
@@ -52,14 +60,11 @@ const App = () => {
     character.name.toLowerCase().includes(searchField.toLowerCase())
   );
 
-  if (!characters.length) {
-    return (
-      <div id="temp-page">
-        <div className="page-loader animate-flicker">Please wait...</div>
-      </div>
-    );
-  }
-  return (
+  return isLoadingCharacters ? (
+    <div id="temp-page">
+      <div className="page-loader animate-flicker">Please wait...</div>
+    </div>
+  ) : (
     <>
       <Header />
       <div id="main">
@@ -81,12 +86,9 @@ const App = () => {
   );
 };
 
-const maptDispatchToProps = (dispatch) => ({
-  getCharacters: () => dispatch(getCharacters()),
-});
+App.propTypes = {
+  characters: PropTypes.array.isRequired,
+  loadCharacters: PropTypes.func.isRequired,
+};
 
-const mapStateToProps = (state) => ({
-  characters: state.characters.characters,
-});
-
-export default connect(mapStateToProps, maptDispatchToProps)(App);
+export default App;
