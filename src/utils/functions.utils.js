@@ -1,11 +1,19 @@
 import { BASE_IMAGE_URL } from './constants.utils';
 
-export const addCharactersId = (list) => {
-  list.forEach((item, index) => {
-    // eslint-disable-next-line no-param-reassign
-    item.id = index;
-  });
-};
+const getIdParamFromUrl = (url) => parseInt(url.replace(/\D/g, ''), 10);
+
+const mapArrayProperty = (item) => getIdParamFromUrl(item);
+
+export const updateCharactersProperties = (data) =>
+  data.map((character, index) => ({
+    id: index,
+    ...character,
+    homeworld: getIdParamFromUrl(character.homeworld),
+    films: character.films.map(mapArrayProperty),
+    species: character.species.map(mapArrayProperty),
+    vehicles: character.vehicles.map(mapArrayProperty),
+    starships: character.starships.map(mapArrayProperty),
+  }));
 
 export const getImageUrl = (index) => `${BASE_IMAGE_URL}${index < 16 ? index + 1 : index + 2}.jpg`;
 
