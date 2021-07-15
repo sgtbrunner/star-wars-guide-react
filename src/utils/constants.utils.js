@@ -6,3 +6,9 @@ export const PLANETS = 'planets';
 export const SPECIES = 'species';
 export const STARSHIPS = 'starships';
 export const VEHICLES = 'vehicles';
+
+export const INITIAL_STATE = {
+  isLoading: false,
+  data: null,
+  error: null,
+};

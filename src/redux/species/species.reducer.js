@@ -1,20 +1,20 @@
-import charactersActionTypes from './characters.types';
+import speciesActionTypes from './species.types';
 import { INITIAL_STATE } from '../../utils/constants.utils';
 
-const charactersReducer = (state = INITIAL_STATE, action) => {
+const speciesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case charactersActionTypes.LOAD_CHARACTERS_START:
+    case speciesActionTypes.LOAD_SPECIES_START:
       return {
         ...state,
         isLoading: true,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_SUCCESS:
+    case speciesActionTypes.LOAD_SPECIES_SUCCESS:
       return {
         ...state,
         isLoading: false,
         data: action.payload,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_FAILURE:
+    case speciesActionTypes.LOAD_SPECIES_FAILURE:
       return {
         ...state,
         isLoading: false,
@@ -25,4 +25,4 @@ const charactersReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default charactersReducer;
+export default speciesReducer;

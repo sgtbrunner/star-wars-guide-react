@@ -1,7 +1,7 @@
-import { charactersActionTypes } from './characters.types';
+import charactersActionTypes from './characters.types';
 import api from '../../utils/api.utils';
 import { PEOPLE } from '../../utils/constants.utils';
-import { addCharactersId } from '../../utils/functions.utils';
+import { updateCharactersProperties } from '../../utils/functions.utils';
 
 const loadCharactersStart = () => ({
   type: charactersActionTypes.LOAD_CHARACTERS_START,
@@ -17,13 +17,13 @@ const loadCharactersFailure = (error) => ({
   payload: error,
 });
 
-export const loadCharacters = async (dispatch) => {
+const loadCharacters = async (dispatch) => {
   dispatch(loadCharactersStart());
 
   try {
     const data = await api.getData(PEOPLE);
-    addCharactersId(data);
-    dispatch(loadCharactersSuccess(data));
+    const characters = updateCharactersProperties(data);
+    dispatch(loadCharactersSuccess(characters));
   } catch (error) {
     dispatch(loadCharactersFailure(error));
   }

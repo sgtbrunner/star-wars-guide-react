@@ -1,0 +1,7 @@
+const vehiclesActionTypes = {
+  LOAD_VEHICLES_START: 'LOAD_VEHICLES_START',
+  LOAD_VEHICLES_SUCCESS: 'LOAD_VEHICLES_SUCCESS',
+  LOAD_VEHICLES_FAILURE: 'LOAD_VEHICLES_FAILURE',
+};
+
+export default vehiclesActionTypes;
