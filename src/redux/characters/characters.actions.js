@@ -1,4 +1,4 @@
-import { charactersActionTypes } from './characters.types';
+import charactersActionTypes from './characters.types';
 import api from '../../utils/api.utils';
 import { PEOPLE } from '../../utils/constants.utils';
 import { updateCharactersProperties } from '../../utils/functions.utils';
@@ -17,7 +17,7 @@ const loadCharactersFailure = (error) => ({
   payload: error,
 });
 
-export const loadCharacters = async (dispatch) => {
+const loadCharacters = async (dispatch) => {
   dispatch(loadCharactersStart());
 
   try {

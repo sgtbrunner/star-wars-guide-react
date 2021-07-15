@@ -1,20 +1,20 @@
-import charactersActionTypes from './characters.types';
+import vehiclesActionTypes from './vehicles.types';
 import { INITIAL_STATE } from '../../utils/constants.utils';
 
-const charactersReducer = (state = INITIAL_STATE, action) => {
+const vehiclesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case charactersActionTypes.LOAD_CHARACTERS_START:
+    case vehiclesActionTypes.LOAD_VEHICLES_START:
       return {
         ...state,
         isLoading: true,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_SUCCESS:
+    case vehiclesActionTypes.LOAD_VEHICLES_SUCCESS:
       return {
         ...state,
         isLoading: false,
         data: action.payload,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_FAILURE:
+    case vehiclesActionTypes.LOAD_VEHICLES_FAILURE:
       return {
         ...state,
         isLoading: false,
@@ -25,4 +25,4 @@ const charactersReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default charactersReducer;
+export default vehiclesReducer;

@@ -1,20 +1,20 @@
-import charactersActionTypes from './characters.types';
+import planetActionTypes from './planets.types';
 import { INITIAL_STATE } from '../../utils/constants.utils';
 
-const charactersReducer = (state = INITIAL_STATE, action) => {
+const planetsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case charactersActionTypes.LOAD_CHARACTERS_START:
+    case planetActionTypes.LOAD_PLANET_START:
       return {
         ...state,
         isLoading: true,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_SUCCESS:
+    case planetActionTypes.LOAD_PLANET_SUCCESS:
       return {
         ...state,
         isLoading: false,
         data: action.payload,
       };
-    case charactersActionTypes.LOAD_CHARACTERS_FAILURE:
+    case planetActionTypes.LOAD_PLANET_FAILURE:
       return {
         ...state,
         isLoading: false,
@@ -25,4 +25,4 @@ const charactersReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default charactersReducer;
+export default planetsReducer;

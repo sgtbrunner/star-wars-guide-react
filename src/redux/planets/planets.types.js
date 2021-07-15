@@ -1,0 +1,7 @@
+const planetActionTypes = {
+  LOAD_PLANET_START: 'LOAD_PLANET_START',
+  LOAD_PLANET_SUCCESS: 'LOAD_PLANET_SUCCESS',
+  LOAD_PLANET_FAILURE: 'LOAD_PLANET_FAILURE',
+};
+
+export default planetActionTypes;

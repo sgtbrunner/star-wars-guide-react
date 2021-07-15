@@ -9,25 +9,33 @@ import Footer from '../components/Footer';
 import { getStats, getFilms } from '../utils/functions.utils';
 import './App.css';
 
-const App = ({ loadCharacters, characters }) => {
+const App = ({
+  characters,
+  loadCharacters,
+  loadFilms,
+  loadPlanets,
+  loadSpecies,
+  loadStarships,
+  loadVehicles,
+}) => {
   const isLoadingCharacters = !characters.length;
   const [searchField, setSearchField] = useState('');
   const [clickedCard, setClickedCard] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [characterDetails, setCharacterDetails] = useState({ race: {}, planet: {}, movies: '' });
+
   useEffect(() => {
-    const fetchData = () => {
-      // await api.getData(FILMS).then((data) => console.table(data));
-      // await api.getData(PLANETS).then((data) => console.table(data));
-      // await api.getData(SPECIES).then((data) => console.table(data));
-      // await api.getData(STARSHIPS).then((data) => console.table(data));
-      // await api.getData(VEHICLES).then((data) => console.table(data));
-      // await api.getData(PEOPLE).then((data) => console.log(data));
-      loadCharacters();
+    const fetchData = async () => {
+      await loadCharacters();
+      loadFilms();
+      loadPlanets();
+      loadSpecies();
+      loadStarships();
+      loadVehicles();
     };
 
     fetchData();
-  }, [loadCharacters]);
+  }, [loadCharacters, loadFilms, loadPlanets, loadSpecies, loadStarships, loadVehicles]);
 
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
@@ -89,6 +97,11 @@ const App = ({ loadCharacters, characters }) => {
 App.propTypes = {
   characters: PropTypes.array.isRequired,
   loadCharacters: PropTypes.func.isRequired,
+  loadFilms: PropTypes.func.isRequired,
+  loadPlanets: PropTypes.func.isRequired,
+  loadSpecies: PropTypes.func.isRequired,
+  loadStarships: PropTypes.func.isRequired,
+  loadVehicles: PropTypes.func.isRequired,
 };
 
 export default App;
