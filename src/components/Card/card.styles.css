@@ -1,5 +1,6 @@
 .card {
   width: 210px;
+  height: 100%;
   border: 3px solid goldenrod;
   margin: 15px 5px;
   padding: 0;

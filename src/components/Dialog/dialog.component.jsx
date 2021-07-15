@@ -17,7 +17,7 @@ const Dialog = ({ character, race, planet, movies, onCloseClick }) => {
     <div className="dialog">
       {!showContent ? (
         <div className="dialog-load">
-          <div className="loader" />
+          <div className="dialog-loader" />
         </div>
       ) : (
         <div className="dialog-content">
