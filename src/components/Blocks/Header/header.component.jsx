@@ -1,6 +1,6 @@
 import React from 'react';
 
-import swCover from '../../assets/img/logo.png';
+import swCover from '../../../assets/img/logo.png';
 import './header.styles.css';
 
 const Header = () => (

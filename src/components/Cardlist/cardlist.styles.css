@@ -7,6 +7,16 @@
   min-height: 70vh;
 }
 
+.white-backdrop {
+  background-color: rgba(240, 240, 240);
+  border-color: gray;
+}
+
+#main > .white-backdrop {
+  min-height: 67vh;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .alert-text {
   font-family: 'Star Jedi';
   line-height: 60vh;

@@ -9,7 +9,7 @@ import loadVehicles from '../redux/vehicles/vehicles.actions';
 import App from './App';
 
 const mapStateToProps = (state) => ({
-  characters: state.characters.data || [],
+  isCharactersLoading: !state.characters.data.length,
 });
 
 const mapDispatchToProps = (dispatch) => ({

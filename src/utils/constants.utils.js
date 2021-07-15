@@ -9,6 +9,6 @@ export const VEHICLES = 'vehicles';
 
 export const INITIAL_STATE = {
   isLoading: false,
-  data: null,
+  data: [],
   error: null,
 };
