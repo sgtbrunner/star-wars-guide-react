@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import Dialog from '../components/Dialog';
 import Footer from '../components/Blocks/Footer';
 import Header from '../components/Blocks/Header';
 import Main from '../components/Blocks/Main';
@@ -15,6 +16,7 @@ const App = ({
   loadSpecies,
   loadStarships,
   loadVehicles,
+  showDialog,
 }) => {
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +38,7 @@ const App = ({
       <Header />
       <Main />
       <Footer />
+      {showDialog && <Dialog />}
     </>
   );
 };
@@ -48,6 +51,7 @@ App.propTypes = {
   loadSpecies: PropTypes.func.isRequired,
   loadStarships: PropTypes.func.isRequired,
   loadVehicles: PropTypes.func.isRequired,
+  showDialog: PropTypes.bool.isRequired,
 };
 
 export default App;

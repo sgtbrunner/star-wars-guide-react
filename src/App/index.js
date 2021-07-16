@@ -10,6 +10,7 @@ import App from './App';
 
 const mapStateToProps = (state) => ({
   isCharactersLoading: !state.characters.data.length,
+  showDialog: state.dialog.isOpen,
 });
 
 const mapDispatchToProps = (dispatch) => ({

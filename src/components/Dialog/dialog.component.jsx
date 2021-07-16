@@ -1,38 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getImageUrl } from '../../utils/functions.utils';
+import { getImageUrl, capitalizeFirstLetter } from '../../utils/functions.utils';
 import './dialog.styles.css';
 
-const Dialog = ({ character, race, planet, movies, onCloseClick }) => {
-  const showContent = !!(race && planet && movies);
-  const dialogStats = [
-    { name: 'Birth Year', value: character?.birth_year },
-    { name: 'Gender', value: character?.gender },
-    { name: 'Species', value: race.name },
-    { name: 'Homeworld', value: planet.name },
-    { name: 'Films', value: movies },
+const Dialog = ({
+  characterId,
+  characters,
+  // films,
+  planets,
+  // species,
+  // starships,
+  // vehicles,
+  isDialogDataLoaded,
+  closeDialog,
+}) => {
+  const character = characters[characterId];
+  const DIALOG_STATS = isDialogDataLoaded && [
+    { name: 'Gender', value: capitalizeFirstLetter(character.gender) },
+    { name: 'Birth Year', value: character.birth_year },
+    { name: 'Height', value: character.height, unit: 'cm' },
+    { name: 'Weight', value: character.mass, unit: 'Kg' },
+    { name: 'Homeworld', value: planets[character.homeworld - 1].name },
+    // { name: 'Species', value: race?.name },
+    // { name: 'Films', value: films },
   ];
+
   return (
     <div className="dialog">
-      {!showContent ? (
+      {!isDialogDataLoaded ? (
         <div className="dialog-load">
           <div className="dialog-loader" />
         </div>
       ) : (
         <div className="dialog-content">
           <span className="close">
-            <button type="button" className="bn pointer bg-transparent" onClick={onCloseClick}>
+            <button type="button" className="bn pointer bg-transparent" onClick={closeDialog}>
               &times;
             </button>
           </span>
           <div className="stats-list">
             <div className="char-name">{character.name}</div>
             <img src={getImageUrl(character.id)} className="portrait" alt={character.id} />
-            {dialogStats.map((stat) => (
+            {DIALOG_STATS.map((stat) => (
               <div className="stats" key={stat.name}>
-                <u>{stat.name}</u>:&nbsp;
-                {stat.value}
+                <u>{stat.name}</u>
+                {`: ${stat.value} ${stat.unit && stat.value !== 'unknown' ? stat.unit : ''}`}
               </div>
             ))}
           </div>
@@ -43,11 +56,15 @@ const Dialog = ({ character, race, planet, movies, onCloseClick }) => {
 };
 
 Dialog.propTypes = {
-  character: PropTypes.object.isRequired,
-  race: PropTypes.object.isRequired,
-  planet: PropTypes.object.isRequired,
-  movies: PropTypes.string.isRequired,
-  onCloseClick: PropTypes.func.isRequired,
+  characterId: PropTypes.number.isRequired,
+  characters: PropTypes.array.isRequired,
+  // films: PropTypes.array.isRequired,
+  planets: PropTypes.array.isRequired,
+  // species: PropTypes.array.isRequired,
+  // starships: PropTypes.array.isRequired,
+  // vehicles: PropTypes.array.isRequired,
+  isDialogDataLoaded: PropTypes.bool.isRequired,
+  closeDialog: PropTypes.func.isRequired,
 };
 
 export default Dialog;

@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 import Card from '../Card';
 import './cardlist.styles.css';
 
-const CardList = ({ characters, openModal }) =>
+const CardList = ({ characters }) =>
   characters.length ? (
     <div className="cardlist">
-      {characters.map((character) => {
-        const { name, id } = character;
-        return <Card name={name} index={id} key={id} openModal={openModal} />;
-      })}
+      {characters.map((character) => (
+        <Card name={character.name} index={character.id} key={character.id} />
+      ))}
     </div>
   ) : (
     <div className="pa2 ma3 tc white-backdrop">
@@ -20,7 +19,6 @@ const CardList = ({ characters, openModal }) =>
 
 CardList.propTypes = {
   characters: PropTypes.array.isRequired,
-  openModal: PropTypes.func.isRequired,
 };
 
 export default CardList;
