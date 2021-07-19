@@ -14,8 +14,6 @@ const App = ({
   loadFilms,
   loadPlanets,
   loadSpecies,
-  loadStarships,
-  loadVehicles,
   showDialog,
 }) => {
   useEffect(() => {
@@ -24,12 +22,10 @@ const App = ({
       loadFilms();
       loadPlanets();
       loadSpecies();
-      loadStarships();
-      loadVehicles();
     };
 
     fetchData();
-  }, [loadCharacters, loadFilms, loadPlanets, loadSpecies, loadStarships, loadVehicles]);
+  }, [loadCharacters, loadFilms, loadPlanets, loadSpecies]);
 
   return isCharactersLoading ? (
     <Loader />
@@ -49,8 +45,6 @@ App.propTypes = {
   loadFilms: PropTypes.func.isRequired,
   loadPlanets: PropTypes.func.isRequired,
   loadSpecies: PropTypes.func.isRequired,
-  loadStarships: PropTypes.func.isRequired,
-  loadVehicles: PropTypes.func.isRequired,
   showDialog: PropTypes.bool.isRequired,
 };
 
