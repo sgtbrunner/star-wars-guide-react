@@ -4,26 +4,30 @@ import PropTypes from 'prop-types';
 import { getImageUrl, capitalizeFirstLetter } from '../../utils/functions.utils';
 import './dialog.styles.css';
 
+const deserializeStatsList = (list, type) =>
+  list.map((item) => type[item - 1]?.name || type[item - 1]?.title).join(', ');
+
 const Dialog = ({
   characterId,
   characters,
-  // films,
+  films,
   planets,
-  // species,
-  // starships,
-  // vehicles,
+  species,
   isDialogDataLoaded,
   closeDialog,
 }) => {
   const character = characters[characterId];
   const DIALOG_STATS = isDialogDataLoaded && [
+    {
+      name: 'Species',
+      value: deserializeStatsList(character.species, species) || 'Human',
+    },
     { name: 'Gender', value: capitalizeFirstLetter(character.gender) },
     { name: 'Birth Year', value: character.birth_year },
     { name: 'Height', value: character.height, unit: 'cm' },
     { name: 'Weight', value: character.mass, unit: 'Kg' },
     { name: 'Homeworld', value: planets[character.homeworld - 1].name },
-    // { name: 'Species', value: race?.name },
-    // { name: 'Films', value: films },
+    { name: 'Films', value: deserializeStatsList(character.films, films) },
   ];
 
   return (
@@ -40,8 +44,8 @@ const Dialog = ({
             </button>
           </span>
           <div className="stats-list">
-            <div className="char-name">{character.name}</div>
             <img src={getImageUrl(character.id)} className="portrait" alt={character.id} />
+            <div className="char-name">{character.name}</div>
             {DIALOG_STATS.map((stat) => (
               <div className="stats" key={stat.name}>
                 <u>{stat.name}</u>
@@ -58,11 +62,9 @@ const Dialog = ({
 Dialog.propTypes = {
   characterId: PropTypes.number.isRequired,
   characters: PropTypes.array.isRequired,
-  // films: PropTypes.array.isRequired,
+  films: PropTypes.array.isRequired,
   planets: PropTypes.array.isRequired,
-  // species: PropTypes.array.isRequired,
-  // starships: PropTypes.array.isRequired,
-  // vehicles: PropTypes.array.isRequired,
+  species: PropTypes.array.isRequired,
   isDialogDataLoaded: PropTypes.bool.isRequired,
   closeDialog: PropTypes.func.isRequired,
 };
