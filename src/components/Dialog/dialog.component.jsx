@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { getImageUrl, capitalizeFirstLetter } from '../../utils/functions.utils';
@@ -30,8 +30,18 @@ const Dialog = ({
     { name: 'Films', value: deserializeStatsList(character.films, films) },
   ];
 
+  useEffect(() => {
+    const events = ['click', 'keydown'];
+    const closeOnEvent = (event) => {
+      if (event.keyCode === 27 || event.target.id === 'overlay') closeDialog();
+    };
+
+    events.forEach((event) => window.addEventListener(event, closeOnEvent));
+    return () => events.forEach((event) => window.removeEventListener(event, closeOnEvent));
+  }, [closeDialog]);
+
   return (
-    <div className="dialog">
+    <div className="overlay" id="overlay">
       {!isDialogDataLoaded ? (
         <div className="dialog-load">
           <div className="dialog-loader" />

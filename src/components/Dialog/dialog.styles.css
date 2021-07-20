@@ -1,4 +1,4 @@
-.dialog {
+.overlay {
   position: fixed;
   z-index: 100;
   left: 0;
@@ -13,16 +13,10 @@
 .dialog-load {
   background-color: #fefefe;
   margin: 15vh auto;
-  padding: 4%;
+  padding: 4% 4% 4% 3%;
   border: 3px solid #888;
   border-radius: 20px;
   width: 700px;
-  background: linear-gradient(
-    to right,
-    rgba(239, 239, 239, 100%) 0%,
-    rgba(219, 219, 219, 100%) 50%,
-    rgba(239, 239, 239, 100%) 100%
-  );
 }
 
 .dialog-load {
