@@ -15,6 +15,4 @@ export const updateCharactersProperties = (data) =>
     homeworld: getIdParamFromUrl(character.homeworld),
     films: character.films.map(mapArrayPropertyToId),
     species: character.species.map(mapArrayPropertyToId),
-    vehicles: character.vehicles.map(mapArrayPropertyToId),
-    starships: character.starships.map(mapArrayPropertyToId),
   }));
