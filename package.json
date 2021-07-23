@@ -63,6 +63,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
+      "**/App.js",
       "src/**/*.component.jsx",
       "src/utils/functions.utils.js"
     ]

@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList component should match snapshot when characters are NOT supplied to component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="pa2 ma3 tc white-backdrop"
+        role="alert"
+      >
+        <p
+          class="alert-text animate-flicker"
+        >
+          No characters found!
+        </p>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="pa2 ma3 tc white-backdrop"
+      role="alert"
+    >
+      <p
+        class="alert-text animate-flicker"
+      >
+        No characters found!
+      </p>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`CardList component should match snapshot when characters are supplied to component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="cardlist"
+      >
+        <button
+          class="card pointer"
+          id="0"
+          type="button"
+        >
+          <img
+            alt="character-portrait"
+            id="0"
+            src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+          />
+          <div
+            class="name"
+            id="0"
+          >
+            Anakin Skywalker
+          </div>
+        </button>
+        <button
+          class="card pointer"
+          id="1"
+          type="button"
+        >
+          <img
+            alt="character-portrait"
+            id="1"
+            src="https://starwars-visualguide.com/assets/img/characters/2.jpg"
+          />
+          <div
+            class="name"
+            id="1"
+          >
+            Obi-Wan Kenoby
+          </div>
+        </button>
+        <button
+          class="card pointer"
+          id="2"
+          type="button"
+        >
+          <img
+            alt="character-portrait"
+            id="2"
+            src="https://starwars-visualguide.com/assets/img/characters/3.jpg"
+          />
+          <div
+            class="name"
+            id="2"
+          >
+            Yoda
+          </div>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="cardlist"
+    >
+      <button
+        class="card pointer"
+        id="0"
+        type="button"
+      >
+        <img
+          alt="character-portrait"
+          id="0"
+          src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+        />
+        <div
+          class="name"
+          id="0"
+        >
+          Anakin Skywalker
+        </div>
+      </button>
+      <button
+        class="card pointer"
+        id="1"
+        type="button"
+      >
+        <img
+          alt="character-portrait"
+          id="1"
+          src="https://starwars-visualguide.com/assets/img/characters/2.jpg"
+        />
+        <div
+          class="name"
+          id="1"
+        >
+          Obi-Wan Kenoby
+        </div>
+      </button>
+      <button
+        class="card pointer"
+        id="2"
+        type="button"
+      >
+        <img
+          alt="character-portrait"
+          id="2"
+          src="https://starwars-visualguide.com/assets/img/characters/3.jpg"
+        />
+        <div
+          class="name"
+          id="2"
+        >
+          Yoda
+        </div>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
