@@ -12,8 +12,8 @@ const CardList = ({ characters }) =>
       ))}
     </div>
   ) : (
-    <div className="pa2 ma3 tc white-backdrop">
-      <p1 className="alert-text animate-flicker">No characters found!</p1>
+    <div className="pa2 ma3 tc white-backdrop" role="alert">
+      <p className="alert-text animate-flicker">No characters found!</p>
     </div>
   );
 
