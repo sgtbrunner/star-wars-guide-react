@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => (
   <footer className="pa2 ph5-m ph6-l tc bg-near-black">
     <small className="pa2 f6 db tc lightest-blue">
-      <b className="ttu">GUILHERME BRUNNER</b> © 2021
+      <b className="ttu">GUILHERME BRUNNER</b> 2021
     </small>
     <small className="pa2">
       <a href="https://sgtbrunner.github.io/" rel="noopener noreferrer" target="_blank">
