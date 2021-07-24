@@ -53,6 +53,9 @@ describe('CardList component', () => {
     component`, () => {
     mountCardListComponent();
 
+    const cards = screen.queryAllByRole('button');
+    expect(cards.length).toBe(0);
+
     const alert = screen.getByRole('alert');
     expect(alert).toBeInTheDocument();
     expect(alert).toHaveTextContent(/no characters found!/i);
