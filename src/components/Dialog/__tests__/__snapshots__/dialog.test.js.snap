@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component should match snapshot when data is loaded 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="overlay"
+        id="overlay"
+        role="dialog"
+      >
+        <div
+          class="dialog-content"
+        >
+          <span
+            class="close"
+          >
+            <button
+              class="bn pointer bg-transparent"
+              type="button"
+            >
+              ×
+            </button>
+          </span>
+          <div
+            class="stats-list"
+          >
+            <img
+              alt="2"
+              class="portrait"
+              src="https://starwars-visualguide.com/assets/img/characters/3.jpg"
+            />
+            <div
+              class="char-name"
+            >
+              Yoda
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Species
+              </u>
+              : Yoda's species 
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Gender
+              </u>
+              : Male 
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Birth Year
+              </u>
+              : 896BBY 
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Height
+              </u>
+              : 66 cm
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Weight
+              </u>
+              : 17 Kg
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Homeworld
+              </u>
+              : unknown 
+            </div>
+            <div
+              class="stats"
+              role="listitem"
+            >
+              <u>
+                Films
+              </u>
+              : The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="overlay"
+      id="overlay"
+      role="dialog"
+    >
+      <div
+        class="dialog-content"
+      >
+        <span
+          class="close"
+        >
+          <button
+            class="bn pointer bg-transparent"
+            type="button"
+          >
+            ×
+          </button>
+        </span>
+        <div
+          class="stats-list"
+        >
+          <img
+            alt="2"
+            class="portrait"
+            src="https://starwars-visualguide.com/assets/img/characters/3.jpg"
+          />
+          <div
+            class="char-name"
+          >
+            Yoda
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Species
+            </u>
+            : Yoda's species 
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Gender
+            </u>
+            : Male 
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Birth Year
+            </u>
+            : 896BBY 
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Height
+            </u>
+            : 66 cm
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Weight
+            </u>
+            : 17 Kg
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Homeworld
+            </u>
+            : unknown 
+          </div>
+          <div
+            class="stats"
+            role="listitem"
+          >
+            <u>
+              Films
+            </u>
+            : The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Dialog component should match snapshot when data is loading 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="overlay"
+        id="overlay"
+        role="dialog"
+      >
+        <div
+          class="dialog-load"
+          role="alert"
+        >
+          <div
+            class="dialog-loader"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="overlay"
+      id="overlay"
+      role="dialog"
+    >
+      <div
+        class="dialog-load"
+        role="alert"
+      >
+        <div
+          class="dialog-loader"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

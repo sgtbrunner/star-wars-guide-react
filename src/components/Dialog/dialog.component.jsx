@@ -41,9 +41,9 @@ const Dialog = ({
   }, [closeDialog]);
 
   return (
-    <div className="overlay" id="overlay">
+    <div className="overlay" id="overlay" role="dialog">
       {!isDialogDataLoaded ? (
-        <div className="dialog-load">
+        <div className="dialog-load" role="alert">
           <div className="dialog-loader" />
         </div>
       ) : (
@@ -57,7 +57,7 @@ const Dialog = ({
             <img src={getImageUrl(character.id)} className="portrait" alt={character.id} />
             <div className="char-name">{character.name}</div>
             {DIALOG_STATS.map((stat) => (
-              <div className="stats" key={stat.name}>
+              <div className="stats" key={stat.name} role="listitem">
                 <u>{stat.name}</u>
                 {`: ${stat.value} ${stat.unit && stat.value !== 'unknown' ? stat.unit : ''}`}
               </div>
