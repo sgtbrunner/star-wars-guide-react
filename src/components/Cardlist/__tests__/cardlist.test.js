@@ -4,35 +4,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import CardList from '../cardlist.component';
+import { longCharactersList, shortCharactersList } from '../../../utils/test-mock.utils';
 
 const BUTTON = 'button';
-
-const loadedCharactersA = [
-  {
-    id: 0,
-    name: 'Anakin Skywalker',
-  },
-  {
-    id: 1,
-    name: 'Obi-Wan Kenoby',
-  },
-  {
-    id: 2,
-    name: 'Yoda',
-  },
-];
-
-const loadedCharactersB = [
-  ...loadedCharactersA,
-  {
-    id: 3,
-    name: 'Darth Vader',
-  },
-  {
-    id: 4,
-    name: 'Palpatine',
-  },
-];
 
 const store = createStore(() => {});
 const mountCardListComponent = (characters = []) =>
@@ -62,14 +36,14 @@ describe('CardList component', () => {
   });
 
   it('should match snapshot when characters are supplied to component', () => {
-    const wrapper = mountCardListComponent(loadedCharactersA);
+    const wrapper = mountCardListComponent(shortCharactersList);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it(`should render three (3) cards if three (3) characters are supplied to
     component`, () => {
-    mountCardListComponent(loadedCharactersA);
+    mountCardListComponent(shortCharactersList);
 
     const cards = screen.getAllByRole(BUTTON);
     expect(cards).toHaveLength(3);
@@ -77,29 +51,29 @@ describe('CardList component', () => {
 
   it(`rendered cards should match character names when three (3) characters are supplied 
     to component`, () => {
-    mountCardListComponent(loadedCharactersA);
+    mountCardListComponent(shortCharactersList);
 
     const cards = screen.getAllByRole(BUTTON);
     cards.forEach((card, index) => {
-      expect(card).toHaveTextContent(loadedCharactersA[index].name);
+      expect(card).toHaveTextContent(shortCharactersList[index].name);
     });
   });
 
-  it(`should render five (5) cards if five (5) characters are supplied to
+  it(`should render six (6) cards if six (6) characters are supplied to
   component`, () => {
-    mountCardListComponent(loadedCharactersB);
+    mountCardListComponent(longCharactersList);
 
     const cards = screen.getAllByRole(BUTTON);
-    expect(cards).toHaveLength(5);
+    expect(cards).toHaveLength(6);
   });
 
-  it(`rendered cards should match character names when five (5) characters are supplied
+  it(`rendered cards should match character names when six (6) characters are supplied
     to component`, () => {
-    mountCardListComponent(loadedCharactersB);
+    mountCardListComponent(longCharactersList);
 
     const cards = screen.getAllByRole(BUTTON);
     cards.forEach((card, index) => {
-      expect(card).toHaveTextContent(loadedCharactersB[index].name);
+      expect(card).toHaveTextContent(longCharactersList[index].name);
     });
   });
 });
