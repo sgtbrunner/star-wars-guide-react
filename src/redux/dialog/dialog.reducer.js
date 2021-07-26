@@ -1,11 +1,7 @@
 import dialogActionTypes from './dialog.types';
+import { DIALOG_INITIAL_STATE } from '../../utils/constants.utils';
 
-const INITIAL_STATE = {
-  isOpen: false,
-  characterId: null,
-};
-
-const dialogReducer = (state = INITIAL_STATE, action) => {
+const dialogReducer = (state = DIALOG_INITIAL_STATE, action) => {
   switch (action.type) {
     case dialogActionTypes.OPEN_DIALOG:
       return {
@@ -16,7 +12,7 @@ const dialogReducer = (state = INITIAL_STATE, action) => {
     case dialogActionTypes.CLOSE_DIALOG:
       return {
         ...state,
-        ...INITIAL_STATE,
+        ...DIALOG_INITIAL_STATE,
       };
     default:
       return state;

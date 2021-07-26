@@ -1,7 +1,7 @@
 import speciesActionTypes from './species.types';
-import { INITIAL_STATE } from '../../utils/constants.utils';
+import { DATA_INITIAL_STATE } from '../../utils/constants.utils';
 
-const speciesReducer = (state = INITIAL_STATE, action) => {
+const speciesReducer = (state = DATA_INITIAL_STATE, action) => {
   switch (action.type) {
     case speciesActionTypes.LOAD_SPECIES_START:
       return {
