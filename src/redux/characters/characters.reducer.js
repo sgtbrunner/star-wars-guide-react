@@ -1,7 +1,7 @@
 import charactersActionTypes from './characters.types';
-import { INITIAL_STATE } from '../../utils/constants.utils';
+import { DATA_INITIAL_STATE } from '../../utils/constants.utils';
 
-const charactersReducer = (state = INITIAL_STATE, action) => {
+const charactersReducer = (state = DATA_INITIAL_STATE, action) => {
   switch (action.type) {
     case charactersActionTypes.LOAD_CHARACTERS_START:
       return {

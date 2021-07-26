@@ -1,7 +1,7 @@
 import planetActionTypes from './planets.types';
-import { INITIAL_STATE } from '../../utils/constants.utils';
+import { DATA_INITIAL_STATE } from '../../utils/constants.utils';
 
-const planetsReducer = (state = INITIAL_STATE, action) => {
+const planetsReducer = (state = DATA_INITIAL_STATE, action) => {
   switch (action.type) {
     case planetActionTypes.LOAD_PLANET_START:
       return {

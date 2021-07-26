@@ -7,8 +7,13 @@ export const SPECIES = 'species';
 export const STARSHIPS = 'starships';
 export const VEHICLES = 'vehicles';
 
-export const INITIAL_STATE = {
+export const DATA_INITIAL_STATE = {
   isLoading: false,
   data: [],
   error: null,
+};
+
+export const DIALOG_INITIAL_STATE = {
+  isOpen: false,
+  characterId: null,
 };

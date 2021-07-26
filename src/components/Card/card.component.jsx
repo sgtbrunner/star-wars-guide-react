@@ -5,7 +5,7 @@ import { getImageUrl } from '../../utils/functions.utils';
 import './card.styles.css';
 
 const Card = ({ name, index, openDialog }) => (
-  <button type="button" onClick={openDialog} className="card pointer" id={index}>
+  <button id={index} type="button" onClick={openDialog} className="card pointer">
     <img src={getImageUrl(index)} alt="character-portrait" id={index} />
     <div className="name" id={index}>
       {name}
