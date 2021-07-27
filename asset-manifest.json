@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/star-wars-guide-react/static/css/main.ca73d5f2.chunk.css",
-    "main.js": "/star-wars-guide-react/static/js/main.ae2020c7.chunk.js",
-    "main.js.map": "/star-wars-guide-react/static/js/main.ae2020c7.chunk.js.map",
+    "main.js": "/star-wars-guide-react/static/js/main.56b5fd80.chunk.js",
+    "main.js.map": "/star-wars-guide-react/static/js/main.56b5fd80.chunk.js.map",
     "runtime-main.js": "/star-wars-guide-react/static/js/runtime-main.8d9d12c6.js",
     "runtime-main.js.map": "/star-wars-guide-react/static/js/runtime-main.8d9d12c6.js.map",
     "static/css/2.6d7c7915.chunk.css": "/star-wars-guide-react/static/css/2.6d7c7915.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.6d7c7915.chunk.css",
     "static/js/2.fac4b227.chunk.js",
     "static/css/main.ca73d5f2.chunk.css",
-    "static/js/main.ae2020c7.chunk.js"
+    "static/js/main.56b5fd80.chunk.js"
   ]
 }
